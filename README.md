@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Deploy to GitHub Pages without using angular-cli-ghpages
+
+```
+ng build --prod --base-href "/ng6demo/"
+git checkout --orphan gh-pages
+mv dist/ng6demo/* .
+git add *.*
+git commit -m "Add static files"
+git push origin gh-pages
+```
