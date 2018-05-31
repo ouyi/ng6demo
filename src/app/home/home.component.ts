@@ -32,8 +32,6 @@ import { DataService } from '../data.service';
 })
 export class HomeComponent implements OnInit {
 
-  itemCount: number;
-
   btnText: string = 'Add an item';
 
   goalText: string = 'My first life goal';
@@ -44,13 +42,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.obsGoals.subscribe(g => this.goals = g);
-    this.itemCount = this.goals.length;
   }
 
   addItem() {
     this.goals.push(this.goalText);
     this.goalText = '';
-    this.itemCount = this.goals.length;
     this.dataService.changeGoals(this.goals);
   }
 
